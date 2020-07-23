@@ -1,53 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             xmlns:views="clr-namespace:A3DFoodWorld.Views"
-            x:Class="A3DFoodWorld.Views.MainPage">
-    
-    <TabbedPage.Children>
-        <NavigationPage Title="Home">
+            x:Class="A3DFoodWorld.Views.MainPage" >
+
+    <MasterDetailPage.Master>
+        <views:MasterPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
             <x:Arguments>
                 <views:Home />
             </x:Arguments>
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
         </NavigationPage>
-        <NavigationPage Title="Menu">
+    </MasterDetailPage.Detail>
+    
+    
+    <!--<TabbedPage.Title>Food World</TabbedPage.Title>-->
+    <!--<TabbedPage.ToolbarItems> //xmlns:fontawesome="clr-namespace:FontAwesome"
+        <ToolbarItem Text="Food World" Priority="0"  Order="Primary" />
+        <ToolbarItem Priority="1"  Order="Primary">
+             <ToolbarItem.IconImageSource>
+                <FontImageSource   FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static fontawesome:FontAwesomeIcons.InfoCircle}"  Size="Medium" Color="White" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </TabbedPage.ToolbarItems>-->
+
+    <!--<MasterDetailPage.Master>
+        <views:MenuPage Title="Menu" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views:Home Title="Home" />
+            </x:Arguments>
+
+            <NavigationPage.IconImageSource>
+                <FontImageSource  FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static fontawesome:FontAwesomeIcons.Home}"  Size="Medium" Color="White" />
+            </NavigationPage.IconImageSource>
+        </NavigationPage>-->
+        <!--<NavigationPage Title="Menu">
             <x:Arguments>
                 <views:Menu />
             </x:Arguments>
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+            <NavigationPage.IconImageSource>
+                <FontImageSource  FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static fontawesome:FontAwesomeIcons.List}"  Size="Medium" Color="White" />
+            </NavigationPage.IconImageSource>
         </NavigationPage>
         <NavigationPage Title="Cart">
             <x:Arguments>
                 <views:Cart />
             </x:Arguments>
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
+            <NavigationPage.IconImageSource>
+                <FontImageSource  FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static fontawesome:FontAwesomeIcons.ShoppingCart}"  Size="Medium" Color="White" />
+            </NavigationPage.IconImageSource>
         </NavigationPage>
         <NavigationPage Title="Account">
             <x:Arguments>
                 <views:Account />
             </x:Arguments>
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-        </NavigationPage>
+            <NavigationPage.IconImageSource>
+                <FontImageSource  FontFamily="{StaticResource FontAwesomeSolid}" Glyph="{x:Static fontawesome:FontAwesomeIcons.User}"  Size="Medium" Color="White" />
+            </NavigationPage.IconImageSource>
+        </NavigationPage>-->
         <!--<NavigationPage Title="About">
             <x:Arguments>
                 <views:AboutPage />
@@ -57,7 +75,7 @@
                     <On Platform="iOS" Value="tab_about.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
-        </NavigationPage>-->
-    </TabbedPage.Children>
-    
-</TabbedPage>
+        </NavigationPage>
+    </MasterDetailPage.Detail>-->
+
+</MasterDetailPage>

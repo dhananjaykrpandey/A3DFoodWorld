@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:A3DFoodWorld.Models"
+             xmlns:CS="clr-namespace:A3DFoodWorld.CS"
+             x:Class="A3DFoodWorld.Views.MasterPage"
+            Title="Food World"
+             xmlns:fontawesome="clr-namespace:FontAwesome">
+    <StackLayout>
+        <ListView  x:Name="listView" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:HomeMenuItem}">
+                    <local:HomeMenuItem Title="Home" IconSource="{x:Static fontawesome:FontAwesomeIcons.Home}" TargetType="{x:Type CS:HomeCS}" />
+                    <local:HomeMenuItem Title="Food Menu" IconSource="{x:Static fontawesome:FontAwesomeIcons.List}" TargetType="{x:Type CS:MenuCS}" />
+                    <local:HomeMenuItem Title="Cart" IconSource="{x:Static fontawesome:FontAwesomeIcons.ShoppingCart}" TargetType="{x:Type CS:CartCS}" />
+                    <local:HomeMenuItem Title="Account" IconSource="{x:Static fontawesome:FontAwesomeIcons.User}" TargetType="{x:Type CS:AccountCS}" />
+                    <local:HomeMenuItem Title="Forget Password" IconSource="{x:Static fontawesome:FontAwesomeIcons.LockOpen}" TargetType="{x:Type CS:ForgetPasswordCS}" />
+                    <local:HomeMenuItem Title="Logout" IconSource="{x:Static fontawesome:FontAwesomeIcons.SignOutAlt}" TargetType="{x:Type CS:AccountCS}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+
+                            <Label Text="{Binding IconSource}"  FontFamily="{StaticResource FontAwesomeSolid}" Grid.Column="0" FontSize="Large" />
+                            <Label Grid.Column="1" Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

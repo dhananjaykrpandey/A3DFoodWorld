@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace A3DFoodWorld.Droid
 {
-    [Activity(Label = "A3DFoodWorld", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "A3DFoodWorld", Icon = "@mipmap/Arnika72X72", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

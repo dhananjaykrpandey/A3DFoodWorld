@@ -4,12 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="A3DFoodWorld.Views.Home">
+             x:Class="A3DFoodWorld.Views.Home"
+              xmlns:fontawesome="clr-namespace:FontAwesome">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout VerticalOptions="Center"
+                 HorizontalOptions="Center"
+                 Spacing="24">
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.Facebook}"
+               FontFamily="{StaticResource FontAwesomeBrands}"
+               FontSize="Large"
+               HorizontalTextAlignment="Center"/>
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.Home}"
+               FontFamily="{StaticResource FontAwesomeSolid}"
+               FontSize="Large" 
+               HorizontalTextAlignment="Center"/>
+            <Label Text="{x:Static fontawesome:FontAwesomeIcons.ArrowAltCircleDown}"
+               FontFamily="{StaticResource FontAwesomeRegular}"
+               FontSize="Large" 
+               HorizontalTextAlignment="Center"/>
         </StackLayout>
-    </ContentPage.Content>
+           </ContentPage.Content>
 </ContentPage>

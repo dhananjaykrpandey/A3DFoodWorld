@@ -4,10 +4,13 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using A3DFoodWorld.Services;
 using A3DFoodWorld.Views;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace A3DFoodWorld
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
         //TODO: Replace with *.azurewebsites.net url after deploying backend to Azure
         //To debug on Android emulators run the web backend against .NET Core not IIS
@@ -25,6 +28,7 @@ namespace A3DFoodWorld
             else
                 DependencyService.Register<AzureDataStore>();
             MainPage = new MainPage();
+
         }
 
         protected override void OnStart()
